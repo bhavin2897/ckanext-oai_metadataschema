@@ -1,0 +1,14 @@
+# oai_metadataschema-js:
+#   filter: rjsmin
+#   output: ckanext-oai_metadataschema/%(version)s-oai_metadataschema.js
+#   contents:
+#     - js/oai_metadataschema.js
+#   extra:
+#     preload:
+#       - base/main
+
+# oai_metadataschema-css:
+#   filter: cssrewrite
+#   output: ckanext-oai_metadataschema/%(version)s-oai_metadataschema.css
+#   contents:
+#     - css/oai_metadataschema.css

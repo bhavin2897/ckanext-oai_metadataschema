@@ -1,0 +1,17 @@
+{% ckan_extends %}
+
+{% block package_additional_info %}
+ {% snippet "package/snippets/chemical_info.html", pkg = pkg %}
+ {% if pkg.get('relation') %}
+ {% set data_dict = {'relation': pkg.get('relation'), 'relationType': pkg.get('relationType')} %}
+    <h2> {{ _('Related Resources') }} </h2>
+    <ul>
+        {% for n in data_dict %}
+        <li><p> This dataset <b>{{data_dict.relationType}}</b>  <a href="https://doi.org/{{data_dict.relation}}"> {{data_dict.relation}} </a> </p> </li>
+        {% endfor %}
+    </ul>
+ {% endif %}
+
+
+    {{ super() }}
+{% endblock %}

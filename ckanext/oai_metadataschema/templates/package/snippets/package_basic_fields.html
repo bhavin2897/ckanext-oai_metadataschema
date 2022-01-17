@@ -1,0 +1,12 @@
+{% ckan_extends %}
+
+{% block package_basic_fields_custom %}
+    {{ super() }}
+    {{ form.input('language', label=_('Language'), id='field-custom_text', placeholder=_('language'), value=data.language, error=errors.language, classes=['control-medium']) }}
+    {{ form.input('inchi', label=_('InChi'), id='field-custom_text', placeholder=_('inchi'), value=data.inchi, error=errors.inchi, classes=['control-medium']) }}
+    {{ form.input('smiles', label=_('SMILES'), id='field-custom_text', placeholder=_('smiles'), value=data.smiles, error=errors.smiles, classes=['control-medium']) }}
+    {{ form.input('inchi_key', label=_('InChI Key'), id='field-custom_text', placeholder=_('inchi_key'), value=data.inchi_key, error=errors.inchi_key, classes=['control-medium']) }}
+    {{ form.input('exactmass', label=_('Exact Mass'), id='field-custom_text', placeholder=_('exact mass'), value=data.exactmass, error=errors.exactmass, classes=['control-medium']) }}
+    {{ form.input('relation', label=_('Related ID'), id='field-custom_text', placeholder=_('related Id'), value=data.relation, error=data.relation, classes=['control-medium']) }}
+    {{ form.input('relationType', label=_('Related Type'), id='field-custom_text', placeholder=_('related Type'), value=data.relationType, error=errors.relationType, classes=['control-medium']) }}
+{% endblock %}
