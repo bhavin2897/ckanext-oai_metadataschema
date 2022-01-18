@@ -1,7 +1,7 @@
 {% ckan_extends %}
 
 {% block package_additional_info %}
- {% snippet "package/snippets/chemical_info.html", pkg = pkg %}
+
  {% if pkg.get('relation') %}
  {% set data_dict = {'relation': pkg.get('relation'), 'relationType': pkg.get('relationType')} %}
     <h2> {{ _('Related Resources') }} </h2>
