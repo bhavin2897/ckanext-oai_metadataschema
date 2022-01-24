@@ -1,6 +1,6 @@
 {% ckan_extends %}
 
- 
+
 {% block extras %}
 {{ super() }}
 
@@ -11,16 +11,18 @@
     </tr>
   {% endif %}
 
-  {% if pkg_dict.relation %}
-    <tr>
-       <th scope="row" class="dataset-label">{{ _("Relation") }}</th>
-       <td class="dataset-details">{{ pkg_dict.relation }}</td>
-    </tr>
-    <tr>
-        <th scope="row" class="dataset-label">{{ _("RelationType") }}</th>
-        <td class="dataset-details">{{ pkg_dict.relationType }}</td>
-    </tr>
-  {% endif %}
+
+<!--  {% if pkg_dict.relation %}-->
+<!--    <tr>-->
+<!--       <th scope="row" class="dataset-label">{{ _("Relation") }}</th>-->
+<!--       <td class="dataset-details">{{ pkg_dict.relation }}</td>-->
+<!--    </tr>-->
+
+<!--    <tr>-->
+<!--        <th scope="row" class="dataset-label">{{ _("RelationType") }}</th>-->
+<!--        <td class="dataset-details">{{ pkg_dict.relationType }}</td>-->
+<!--    </tr>-->
+<!--  {% endif %}-->
 
 {% endblock %}
 

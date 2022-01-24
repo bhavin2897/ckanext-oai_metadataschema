@@ -29,23 +29,15 @@ class OaiMetadataschemaPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
             u'exactmass': [tk.get_validator(u'ignore_missing'),
                           tk.get_converter(u'convert_to_extras')],
 
-        #
-        #    u'relation': [tk.get_validator(u'ignore_missing'),
-        #                  tk.get_converter(u'convert_to_extras')],
-        #
-        #    u'relationType': [tk.get_validator(u'ignore_missing'),
-        #                         tk.get_converter(u'convert_to_extras')],
+
+            u'relation': [tk.get_validator(u'ignore_missing'),
+                        tk.get_converter(u'convert_to_extras')],
+
+            u'relationType': [tk.get_validator(u'ignore_missing'),
+                                 tk.get_converter(u'convert_to_extras')],
         })
 
-        dict_list = [{u'relation': [tk.get_validator(u'ignore_missing'),
-                                    tk.get_converter(u'convert_to_extras')],
 
-                      u'relationType': [tk.get_validator(u'ignore_missing'),
-                                        tk.get_converter(u'convert_to_extras')]
-                      }]
-
-        for dict in dict_list:
-            schema.update(dict)
 
         return schema
 
@@ -71,22 +63,13 @@ class OaiMetadataschemaPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
             u'exactmass': [tk.get_validator(u'ignore_missing'),
                           tk.get_converter(u'convert_to_extras')],
 
-         #  u'relation': [tk.get_validator(u'ignore_missing'),
-         #                tk.get_converter(u'convert_to_extras')],
-         #
-         #  u'relationType': [tk.get_validator(u'ignore_missing'),
-         #                   tk.get_converter(u'convert_to_extras')],
+          u'relation': [tk.get_validator(u'ignore_missing'),
+                        tk.get_converter(u'convert_to_extras')],
+
+          u'relationType': [tk.get_validator(u'ignore_missing'),
+                           tk.get_converter(u'convert_to_extras')],
         })
 
-        dict_list = [{ u'relation': [tk.get_validator(u'ignore_missing'),
-                          tk.get_converter(u'convert_to_extras')],
-
-                     u'relationType': [tk.get_validator(u'ignore_missing'),
-                             tk.get_converter(u'convert_to_extras')]
-                       }]
-
-        for dict in dict_list:
-            schema.update(dict)
 
         return schema
 
@@ -96,11 +79,11 @@ class OaiMetadataschemaPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
         schema.update({
             u'language': [tk.get_converter(u'convert_from_extras'),
                              tk.get_validator(u'ignore_missing')],
-          #  u'relation': [tk.get_converter(u'convert_from_extras'),
-          #                tk.get_validator(u'ignore_missing')],
-          #
-          #  u'relationType': [tk.get_converter(u'convert_from_extras'),
-          #                    tk.get_validator(u'ignore_missing')]
+           u'relation': [tk.get_converter(u'convert_from_extras'),
+                         tk.get_validator(u'ignore_missing')],
+
+           u'relationType': [tk.get_converter(u'convert_from_extras'),
+                             tk.get_validator(u'ignore_missing')],
 
 
             u'inchi': [tk.get_converter(u'convert_from_extras'),
@@ -117,14 +100,6 @@ class OaiMetadataschemaPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
 
         })
 
-        dict_list = [{u'relation': [tk.get_converter(u'convert_from_extras'),
-                             tk.get_validator(u'ignore_missing')],
-
-                      u'relationType': [tk.get_converter(u'convert_from_extras'),
-                             tk.get_validator(u'ignore_missing')],}]
-
-        for dict in dict_list:
-            schema.update(dict)
 
         return schema
 
