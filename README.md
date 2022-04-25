@@ -1,14 +1,12 @@
-[![Tests](https://github.com/BhavHUb/ckanext-oai_metadataschema/workflows/Tests/badge.svg?branch=main)](https://github.com/BhavHUb/ckanext-oai_metadataschema/actions)
+[![Tests](https://github.com/BhavHUb/ckanext-oai_metadataschema/workflows/Tests/badge.svg?branch=main)](https://github.com/bhavin2897/ckanext-oai_metadataschema/actions)
 
 # ckanext-oai_metadataschema
 
-**TODO:** Put a description of your extension here:  What does it do? What features does it have? Consider including some screenshots or embedding a video!
+Providing a metadataschema for displaing metadata fields to enrich the datasets on ckan. 
+This extension inspired and developed using offical documentation from CKAN, https://docs.ckan.org/en/2.9/extensions/adding-custom-fields.html
 
 
 ## Requirements
-
-**TODO:** For example, you might want to mention here which versions of CKAN this
-extension works with.
 
 If your extension works across different versions you can add the following table:
 
@@ -16,10 +14,8 @@ Compatibility with core CKAN versions:
 
 | CKAN version    | Compatible?   |
 | --------------- | ------------- |
-| 2.6 and earlier | not tested    |
-| 2.7             | not tested    |
 | 2.8             | not tested    |
-| 2.9             | not tested    |
+| 2.9             | yes    |
 
 Suggested values:
 
@@ -31,10 +27,6 @@ Suggested values:
 
 ## Installation
 
-**TODO:** Add any additional install steps to the list below.
-   For example installing any non-Python dependencies or adding any required
-   config settings.
-
 To install ckanext-oai_metadataschema:
 
 1. Activate your CKAN virtual environment, for example:
@@ -43,7 +35,7 @@ To install ckanext-oai_metadataschema:
 
 2. Clone the source and install it on the virtualenv
 
-    git clone https://github.com/BhavHUb/ckanext-oai_metadataschema.git
+    git clone https://github.com/bhavin2897/ckanext-oai_metadataschema.git
     cd ckanext-oai_metadataschema
     pip install -e .
 	pip install -r requirements.txt
@@ -55,7 +47,7 @@ To install ckanext-oai_metadataschema:
 4. Restart CKAN. For example if you've deployed CKAN with Apache on Ubuntu:
 
      sudo service apache2 reload
-
+     
 
 ## Config settings
 
@@ -79,11 +71,9 @@ do:
     pip install -r dev-requirements.txt
 
 
-## Tests
-
-To run the tests, do:
-
-    pytest --ckan-ini=test.ini
+Restart Serverr
+	sudo service supervisor reload
+	sudo service nginx reload
 
 
 ## Releasing a new version of ckanext-oai_metadataschema
