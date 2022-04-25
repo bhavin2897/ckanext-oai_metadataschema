@@ -1,6 +1,6 @@
 import ckan.plugins as p
 import ckan.plugins.toolkit as tk
-from flask import Blueprint
+
 
 class OaiMetadataschemaPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
     p.implements(p.IDatasetForm, inherit=True)
