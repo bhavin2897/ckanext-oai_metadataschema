@@ -40,6 +40,8 @@ class OaiMetadataschemaPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
             u'exactmass': [tk.get_validator(u'ignore_missing'),
                           tk.get_converter(u'convert_to_extras')],
 
+            u'mol_formula': [tk.get_validator(u'ignore_missing'),
+                             tk.get_converter(u'convert_to_extras')],
 
             u'relation': [tk.get_validator(u'ignore_missing'),
                         tk.get_converter(u'convert_to_extras')],
@@ -72,10 +74,13 @@ class OaiMetadataschemaPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
             u'exactmass': [tk.get_validator(u'ignore_missing'),
                           tk.get_converter(u'convert_to_extras')],
 
-          u'relation': [tk.get_validator(u'ignore_missing'),
+            u'mol_formula': [tk.get_validator(u'ignore_missing'),
+                           tk.get_converter(u'convert_to_extras')],
+
+            u'relation': [tk.get_validator(u'ignore_missing'),
                         tk.get_converter(u'convert_to_extras')],
 
-          u'relationType': [tk.get_validator(u'ignore_missing'),
+            u'relationType': [tk.get_validator(u'ignore_missing'),
                            tk.get_converter(u'convert_to_extras')],
         })
         return schema
@@ -86,12 +91,11 @@ class OaiMetadataschemaPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
         schema.update({
             u'language': [tk.get_converter(u'convert_from_extras'),
                              tk.get_validator(u'ignore_missing')],
-           u'relation': [tk.get_converter(u'convert_from_extras'),
+            u'relation': [tk.get_converter(u'convert_from_extras'),
                          tk.get_validator(u'ignore_missing')],
 
-           u'relationType': [tk.get_converter(u'convert_from_extras'),
+            u'relationType': [tk.get_converter(u'convert_from_extras'),
                              tk.get_validator(u'ignore_missing')],
-
 
             u'inchi': [tk.get_converter(u'convert_from_extras'),
                       tk.get_validator(u'ignore_missing')],
@@ -104,6 +108,9 @@ class OaiMetadataschemaPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
 
             u'exactmass': [tk.get_converter(u'convert_from_extras'),
                           tk.get_validator(u'ignore_missing')],
+
+            u'mol_formula': [tk.get_validator(u'ignore_missing'),
+                             tk.get_converter(u'convert_to_extras')],
 
         })
 
