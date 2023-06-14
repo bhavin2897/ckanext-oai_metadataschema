@@ -14,7 +14,7 @@ class OaiMetadataschemaPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
     def package_types(self):
     #    # This plugin doesn't handle any special package types, it just
     #    # registers itself as the default (above).
-        return []
+        return [u'fancy_type']
 
 
     def create_package_schema(self):
