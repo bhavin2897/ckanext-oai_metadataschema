@@ -9,4 +9,5 @@
     {{ form.input('exactmass', label=_('Exact Mass'), id='field-custom_text', placeholder=_('exact mass'), value=data.exactmass, error=errors.exactmass, classes=['control-medium']) }}
     {{ form.input('relation', label=_('Related ID'), id='field-custom_text', placeholder=_('related Id'), value=data.relation, error=data.relation, classes=['control-medium']) }}
     {{ form.input('relationType', label=_('Related Type'), id='field-custom_text', placeholder=_('related Type'), value=data.relationType, error=errors.relationType, classes=['control-medium']) }}
+    {{ form.input('molecule_formula', label=_('Molecular Formula'), id='field-custom_text', placeholder=_('molecular formula'), value=data.molecule_formula, error=errors.molecule_formula, classes=['control-medium']) }}
 {% endblock %}

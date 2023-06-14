@@ -3,7 +3,7 @@ import ckan.plugins.toolkit as tk
 from flask import Blueprint
 
 class OaiMetadataschemaPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
-    p.implements(p.IDatasetForm, inherit=True)
+    p.implements(p.IDatasetForm)
     p.implements(p.IConfigurer)
 
     def is_fallback(self):
@@ -14,7 +14,7 @@ class OaiMetadataschemaPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
     def package_types(self):
     #    # This plugin doesn't handle any special package types, it just
     #    # registers itself as the default (above).
-        return []
+        return [u'fancy_type',u'dataset']
 
 
     def create_package_schema(self):
@@ -39,6 +39,9 @@ class OaiMetadataschemaPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
 
             u'exactmass': [tk.get_validator(u'ignore_missing'),
                           tk.get_converter(u'convert_to_extras')],
+
+            u'molecule_formula': [tk.get_validator(u'ignore_missing'),
+                           tk.get_converter(u'convert_to_extras')],
 
 
             u'relation': [tk.get_validator(u'ignore_missing'),
@@ -71,6 +74,9 @@ class OaiMetadataschemaPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
 
             u'exactmass': [tk.get_validator(u'ignore_missing'),
                           tk.get_converter(u'convert_to_extras')],
+
+            u'molecule_formula': [tk.get_validator(u'ignore_missing'),
+                                  tk.get_converter(u'convert_to_extras')],
 
           u'relation': [tk.get_validator(u'ignore_missing'),
                         tk.get_converter(u'convert_to_extras')],
@@ -105,16 +111,19 @@ class OaiMetadataschemaPlugin(p.SingletonPlugin, tk.DefaultDatasetForm):
             u'exactmass': [tk.get_converter(u'convert_from_extras'),
                           tk.get_validator(u'ignore_missing')],
 
+            u'molecule_formula': [tk.get_validator(u'ignore_missing'),
+                                  tk.get_converter(u'convert_to_extras')],
+
         })
 
         return schema
 
 
-    def update_config(self, config):
+    def update_config(self, config_):
         # Add this plugin's templates dir to CKAN's extra_template_paths, so
         # that CKAN will use this plugin's custom templates.
-        tk.add_template_directory(config, 'templates')
-        tk.add_public_directory(config, 'public')
+        tk.add_template_directory(config_, 'templates')
+        tk.add_public_directory(config_, 'public')
         tk.add_resource('public/statics', 'ckanext-oai-metadataschema')
 
 
